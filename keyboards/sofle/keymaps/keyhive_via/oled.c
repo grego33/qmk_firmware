@@ -40,22 +40,24 @@ static void print_status_narrow(void) {
         case 1:
             oled_write_ln_P(PSTR("Func"), false);
             break;
-        default:
-            oled_write_P(PSTR("Mod\n"), false);
+        case 2:
+            oled_write_ln_P(PSTR("Mod"), false);
             break;
+        default:
+            oled_write_ln_P(PSTR("Undef"), false);
     }
     oled_write_P(PSTR("\n\n"), false);
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case 0:
-            oled_write_P(PSTR("Base\n"), false);
+            oled_write_ln_P(PSTR("Base"), false);
             break;
         case 1:
-            oled_write_P(PSTR("Func\n"), false);
+            oled_write_ln_P(PSTR("Func"), false);
             break;
         case 2:
-            oled_write_P(PSTR("Mod\n"), false);
+            oled_write_ln_P(PSTR("Mod"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
